@@ -2,7 +2,7 @@
   "name": "hypebridge-brand-fit",
   "version": "1.0.0",
   "type": "module",
-  "description": "Apify actor for HypeBridge AI Influencer Brand Fit Analysis",
+  "description": "Automatically evaluate Instagram and TikTok influencers against custom brand criteria to get objective fit scores and detailed reasoning.",
   "main": "dist/main.js",
   "scripts": {
     "start": "node dist/main.js",

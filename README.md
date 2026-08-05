@@ -1,8 +1,8 @@
 ## What does HypeBridge Influencer Brand Fit Analysis do?
 
-**HypeBridge Influencer Brand Fit Analysis** automatically evaluates social media influencers (Instagram and TikTok) against your brand's unique criteria. Instead of manually reading profiles, reviewing posts, and cross-referencing demographics, this tool delivers structured, criterion-by-criterion assessments, detailed reasoning, summary counts, and an overall percentage fit score.
+**HypeBridge Influencer Brand Fit Analysis** automatically assesses whether any Instagram or TikTok influencer matches your campaign requirements. Instead of manually reviewing profiles, analyzing posts, and guessing demographic alignment, this tool provides instant criterion-by-criterion fit assessments, detailed reasoning, summary counts, and an overall percentage fit score.
 
-Whether you are matching influencers to a local campaign, verifying creator demographics, checking brand safety, or evaluating content style alignment, HypeBridge gives you instant, objective AI-powered brand fit intelligence.
+Whether you are vetting creators for a regional launch, auditing brand safety, or matching influencers to specific demographic criteria, HypeBridge provides instant, objective brand fit intelligence.
 
 ## Why analyze influencer brand fit?
 
