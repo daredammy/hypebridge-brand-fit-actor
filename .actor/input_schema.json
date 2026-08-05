@@ -1,0 +1,52 @@
+{
+  "title": "HypeBridge Influencer Brand Fit Analysis",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "brandName": {
+      "title": "Brand Name",
+      "type": "string",
+      "description": "Name of the brand or company conducting the fit analysis (1-100 characters).",
+      "editor": "textfield",
+      "minLength": 1,
+      "maxLength": 100,
+      "example": "Nightly Traffic",
+      "prefill": "Nightly Traffic"
+    },
+    "criteria": {
+      "title": "Brand Fit Criteria",
+      "type": "string",
+      "description": "Detailed prompt or list of criteria to evaluate the influencer against (10-10,000 characters).",
+      "editor": "textarea",
+      "minLength": 10,
+      "maxLength": 10000,
+      "example": "Must have lived in Dallas for >3 years.\nWent to High School or College in target city.\nIs younger than 35.\nHas more than 10K followers.",
+      "prefill": "Must have lived in Dallas for >3 years.\nWent to High School or College in target city.\nIs younger than 35.\nHas more than 10K followers.\nHas an engaging voice and creates authentic content."
+    },
+    "influencerHandle": {
+      "title": "Influencer Handle (Optional if Evaluation ID is provided)",
+      "type": "string",
+      "description": "Social media handle (e.g., 'natgeo' or '@natgeo'). Required if Evaluation ID is not provided.",
+      "editor": "textfield",
+      "example": "natgeo",
+      "prefill": "natgeo"
+    },
+    "platform": {
+      "title": "Platform",
+      "type": "string",
+      "description": "Social media platform (instagram or tiktok). Defaults to 'instagram'.",
+      "editor": "select",
+      "enum": ["instagram", "tiktok"],
+      "enumTitles": ["Instagram", "TikTok"],
+      "default": "instagram"
+    },
+    "evaluationId": {
+      "title": "Evaluation ID (Optional)",
+      "type": "string",
+      "description": "Existing evaluation ID from a previous influencer evaluation run. If provided, skips initial evaluation step.",
+      "editor": "textfield",
+      "example": "eval_1755622542227434030"
+    }
+  },
+  "required": ["brandName", "criteria"]
+}

@@ -1,0 +1,13 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "HypeBridge Influencer Brand Fit Analysis Output",
+  "description": "Comprehensive brand fit analysis data including individual criterion assessments, reasoning, summary counts, and fit score.",
+  "properties": {
+    "overviewView": {
+      "type": "string",
+      "title": "Overview",
+      "description": "Complete brand fit analysis including criterion fit levels, reasoning, and overall fit score percentage",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    }
+  }
+}

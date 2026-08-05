@@ -1,0 +1,83 @@
+{
+  "actorSpecification": 1,
+  "name": "hypebridge-brand-fit",
+  "version": "1.0",
+  "meta": {
+    "templateId": "ts-start"
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "environmentVariables": {
+    "HYPEBRIDGE_BACKEND_URL": "https://hypebridge-eval-kgz4yt6uga-uc.a.run.app",
+    "FIREBASE_PROJECT_ID": "hypebridge",
+    "FIREBASE_SERVICE_ACCOUNT": "@firebaseServiceAccount",
+    "TELEMETRY_ACTOR_NAME": "hypebridge-brand-fit",
+    "TELEMETRY_SERVICE_ACCOUNT": "@firebaseServiceAccount"
+  },
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Influencer Brand Fit Analysis Results",
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": [
+              "brandFitId",
+              "brandName",
+              "handle",
+              "platform",
+              "fitScore",
+              "summary",
+              "evaluation",
+              "processingTimeSecs",
+              "updatedAt"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "brandFitId": {
+                "label": "Brand Fit ID",
+                "format": "text"
+              },
+              "brandName": {
+                "label": "Brand Name",
+                "format": "text"
+              },
+              "handle": {
+                "label": "Influencer Handle",
+                "format": "text"
+              },
+              "platform": {
+                "label": "Platform",
+                "format": "text"
+              },
+              "fitScore": {
+                "label": "Fit Score (%)",
+                "format": "number"
+              },
+              "summary": {
+                "label": "Summary Counts",
+                "format": "object"
+              },
+              "evaluation": {
+                "label": "Criteria Evaluation",
+                "format": "array"
+              },
+              "processingTimeSecs": {
+                "label": "Processing Time (s)",
+                "format": "number"
+              },
+              "updatedAt": {
+                "label": "Updated At",
+                "format": "text"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "dockerfile": "./Dockerfile"
+}
