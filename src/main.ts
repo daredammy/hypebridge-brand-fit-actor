@@ -70,6 +70,15 @@ try {
 
         finalEvalId = evalStartResp.evaluationId;
         log.info(`Influencer evaluation completed successfully. evaluationId = ${finalEvalId}`);
+
+        // Charge for the full evaluation only on this branch — runs that supply an
+        // existing evaluationId reuse that work and pay for brand fit alone.
+        try {
+            await Actor.charge({ eventName: 'influencer-evaluation' });
+            log.info('Charged Pay-Per-Event for influencer-evaluation.');
+        } catch (chargeErr) {
+            log.warning(`PPE charge skipped or not configured: ${formatError(chargeErr)}`);
+        }
     } else {
         // Step 4: Pre-flight check on existing evaluation document
         log.info(`Performing pre-flight verification on evaluationId: '${finalEvalId}'...`);
