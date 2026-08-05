@@ -79,5 +79,5 @@
       }
     }
   },
-  "dockerfile": "./Dockerfile"
+  "dockerfile": "./.actor/Dockerfile"
 }
