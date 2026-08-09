@@ -37,37 +37,31 @@ export function validateActorInput(input: ActorInput | null): {
     influencerHandle?: string;
     platform: 'instagram' | 'tiktok';
 } {
-    if (!input) {
-        throw new Error('Input missing. Please provide brandName, criteria, and either influencerHandle or evaluationId.');
-    }
+    const rawBrand = input?.brandName ?? 'Nightly Traffic';
+    const rawCriteria = input?.criteria ?? 'Must have lived in Dallas for >3 years.\nWent to High School or College in target city.\nIs younger than 35.\nHas more than 10K followers.\nHas an engaging voice and creates authentic content.';
+    const rawHandle = input?.influencerHandle ?? (input?.evaluationId ? undefined : 'natgeo');
 
     // 1. Validate brandName (1-100 characters, non-whitespace)
-    if (!input.brandName || input.brandName.trim().length === 0) {
-        throw new Error('Invalid input: brandName is required and cannot be empty or whitespace.');
-    }
-    const brandName = input.brandName.trim();
+    const brandName = rawBrand.trim();
     if (brandName.length < 1 || brandName.length > 100) {
         throw new Error(`Invalid input: brandName must be between 1 and 100 characters (got ${brandName.length}).`);
     }
 
     // 2. Validate criteria (10-10,000 characters, non-whitespace)
-    if (!input.criteria || input.criteria.trim().length === 0) {
-        throw new Error('Invalid input: criteria is required and cannot be empty or whitespace.');
-    }
-    const criteria = input.criteria.trim();
+    const criteria = rawCriteria.trim();
     if (criteria.length < 10 || criteria.length > 10000) {
         throw new Error(`Invalid input: criteria must be between 10 and 10,000 characters (got ${criteria.length}).`);
     }
 
     // 3. Either evaluationId OR influencerHandle must be supplied
-    let evaluationId = input.evaluationId?.trim();
-    let influencerHandle = input.influencerHandle ? normalizeHandle(input.influencerHandle) : undefined;
+    const evaluationId = input?.evaluationId?.trim();
+    const influencerHandle = rawHandle ? normalizeHandle(rawHandle) : undefined;
 
     if (!evaluationId && (!influencerHandle || influencerHandle.length === 0)) {
         throw new Error('Invalid input: Either evaluationId OR influencerHandle must be supplied.');
     }
 
-    const platform: 'instagram' | 'tiktok' = input.platform || 'instagram';
+    const platform: 'instagram' | 'tiktok' = input?.platform || 'instagram';
 
     return {
         brandName,
