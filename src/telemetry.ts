@@ -103,6 +103,7 @@ export class ActorTelemetry {
             startedAt: this.startedAt,
             completedAt,
             durationMs: completedAt.getTime() - this.startedAt.getTime(),
+            metaOrigin: Actor.getEnv().metaOrigin ?? process.env.APIFY_META_ORIGIN ?? null,
         };
 
         if (!getApps().find((a) => a.name === 'telemetry')) {
