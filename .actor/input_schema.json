@@ -26,8 +26,13 @@
     "influencerHandle": {
       "title": "Influencer Handle (Optional if Evaluation ID is provided)",
       "type": "string",
-      "description": "Social media handle (e.g., 'natgeo' or '@natgeo'). Required if Evaluation ID is not provided.",
+      "description": "Social media handle (e.g., 'natgeo' or '@natgeo') or profile URL. Required if Evaluation ID is not provided.",
       "editor": "textfield",
+      "maxLength": 300,
+      "pattern": "^(?:@?(?![^/?#]*\\.\\.)[A-Za-z0-9_](?:[A-Za-z0-9_.]{0,28}[A-Za-z0-9_])?|(?:https?:\\/\\/)?(?:[A-Za-z0-9-]+\\.)*instagram\\.com\\/@?(?!(?:p|reel|reels|tv|stories|explore|direct|about|accounts|web)\\/?(?:[?#]|$))(?![^/?#]*\\.\\.)[A-Za-z0-9_](?:[A-Za-z0-9_.]{0,28}[A-Za-z0-9_])?\\/?(?:\\?[^\\s#]*)?(?:#[^\\s]*)?|(?:https?:\\/\\/)?(?:[A-Za-z0-9-]+\\.)*tiktok\\.com\\/@[A-Za-z0-9_](?:(?![^/?#]*\\.\\.)[A-Za-z0-9_.]{0,22}[A-Za-z0-9_])?\\/?(?:\\?[^\\s#]*)?(?:#[^\\s]*)?)$",
+      "errorMessage": {
+        "pattern": "Enter a valid Instagram or TikTok handle (e.g. '@natgeo') or profile URL. Non-Instagram/TikTok URLs and invalid formats are not accepted."
+      },
       "example": "natgeo",
       "prefill": "natgeo"
     },
@@ -45,6 +50,10 @@
       "type": "string",
       "description": "Existing evaluation ID from a previous influencer evaluation run. If provided, skips initial evaluation step.",
       "editor": "textfield",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$",
+      "errorMessage": {
+        "pattern": "Evaluation ID may contain only letters, digits, '_' and '-'"
+      },
       "example": "eval_1755622542227434030"
     }
   },
