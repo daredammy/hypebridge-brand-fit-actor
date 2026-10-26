@@ -1,5 +1,5 @@
 # Specify the parent image from which we build
-FROM apify/actor-node:20 AS builder
+FROM apify/actor-node:22 AS builder
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
@@ -14,7 +14,7 @@ COPY . ./
 RUN npm run build
 
 # Create clean production image
-FROM apify/actor-node:20
+FROM apify/actor-node:22
 
 # Copy package files
 COPY package*.json ./
